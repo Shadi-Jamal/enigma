@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4944d738-df33-4b0d-8775-e3fb83ef21e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/uniwue/jpp/enigma/Enigma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/uniwue/jpp/enigma/Enigma.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2tUVQ4hle9iy9Y9s8IMmAYJFEtZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.EnigmaConsole.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="QodanaHighlightedReportService">
+    <option name="localRunNotPublishedPersistedInfo">
+      <LocalReportPersistedInfo>
+        <option name="path" value="/private/var/folders/3w/kmzvsqz502xdykbm5yr2vxhc0000gn/T/qodana_output/qodana.sarif.json" />
+        <option name="reportGuid" value="235ce0bc-151d-43ea-a7e5-0833849857e0" />
+        <option name="reportName" value="enigma/qodana/2025-03-01" />
+      </LocalReportPersistedInfo>
+    </option>
+  </component>
+  <component name="QodanaIsSelectedPersistenceService">
+    <option name="selectedOrLoading" value="true" />
+  </component>
+  <component name="QodanaReportsService">
+    <option name="descriptions">
+      <ReportDescription localRun="true" path="/private/var/folders/3w/kmzvsqz502xdykbm5yr2vxhc0000gn/T/qodana_output/qodana.sarif.json" reportGuid="235ce0bc-151d-43ea-a7e5-0833849857e0" reportId="enigma/qodana/2025-03-01" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="EnigmaConsole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="de.uniwue.jpp.enigma.EnigmaConsole" />
+      <module name="enigma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.uniwue.jpp.enigma.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sun.tools.jar.Main" />
+      <module name="enigma" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EnigmaConsole" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4944d738-df33-4b0d-8775-e3fb83ef21e2" name="Changes" comment="" />
+      <created>1740406620163</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740406620163</updated>
+    </task>
+    <task id="LOCAL-00024" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740605551040</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1740605551040</updated>
+    </task>
+    <task id="LOCAL-00025" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740606854039</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1740606854039</updated>
+    </task>
+    <task id="LOCAL-00026" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740607434031</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1740607434031</updated>
+    </task>
+    <task id="LOCAL-00027" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740607933040</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1740607933040</updated>
+    </task>
+    <task id="LOCAL-00028" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608057033</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608057033</updated>
+    </task>
+    <task id="LOCAL-00029" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608158036</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608158036</updated>
+    </task>
+    <task id="LOCAL-00030" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608297034</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608297034</updated>
+    </task>
+    <task id="LOCAL-00031" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608581041</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608581041</updated>
+    </task>
+    <task id="LOCAL-00032" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608644037</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608644037</updated>
+    </task>
+    <task id="LOCAL-00033" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608684034</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608684034</updated>
+    </task>
+    <task id="LOCAL-00034" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740608956041</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1740608956041</updated>
+    </task>
+    <task id="LOCAL-00035" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740676410040</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1740676410040</updated>
+    </task>
+    <task id="LOCAL-00036" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740676491034</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1740676491034</updated>
+    </task>
+    <task id="LOCAL-00037" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740676666029</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1740676666029</updated>
+    </task>
+    <task id="LOCAL-00038" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740678552036</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678552036</updated>
+    </task>
+    <task id="LOCAL-00039" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740678947034</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678947034</updated>
+    </task>
+    <task id="LOCAL-00040" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740678957033</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1740678957033</updated>
+    </task>
+    <task id="LOCAL-00041" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740679272029</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1740679272029</updated>
+    </task>
+    <task id="LOCAL-00042" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740679333040</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1740679333040</updated>
+    </task>
+    <task id="LOCAL-00043" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740679381028</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1740679381028</updated>
+    </task>
+    <task id="LOCAL-00044" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740679413031</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1740679413031</updated>
+    </task>
+    <task id="LOCAL-00045" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740679585032</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1740679585032</updated>
+    </task>
+    <task id="LOCAL-00046" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740692665041</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1740692665041</updated>
+    </task>
+    <task id="LOCAL-00047" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740692870055</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1740692870055</updated>
+    </task>
+    <task id="LOCAL-00048" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740693111055</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1740693111055</updated>
+    </task>
+    <task id="LOCAL-00049" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740694603045</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1740694603045</updated>
+    </task>
+    <task id="LOCAL-00050" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740694900049</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1740694900049</updated>
+    </task>
+    <task id="LOCAL-00051" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740694962043</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1740694962043</updated>
+    </task>
+    <task id="LOCAL-00052" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740695766033</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1740695766033</updated>
+    </task>
+    <task id="LOCAL-00053" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740695853037</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1740695853037</updated>
+    </task>
+    <task id="LOCAL-00054" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740696477040</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1740696477040</updated>
+    </task>
+    <task id="LOCAL-00055" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740696877026</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1740696877026</updated>
+    </task>
+    <task id="LOCAL-00056" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740698841030</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1740698841030</updated>
+    </task>
+    <task id="LOCAL-00057" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740701776037</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1740701776037</updated>
+    </task>
+    <task id="LOCAL-00058" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740701911033</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1740701911034</updated>
+    </task>
+    <task id="LOCAL-00059" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740701975039</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1740701975039</updated>
+    </task>
+    <task id="LOCAL-00060" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740702089039</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1740702089039</updated>
+    </task>
+    <task id="LOCAL-00061" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740742019029</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1740742019029</updated>
+    </task>
+    <task id="LOCAL-00062" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740783246041</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1740783246041</updated>
+    </task>
+    <task id="LOCAL-00063" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740841582038</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1740841582038</updated>
+    </task>
+    <task id="LOCAL-00064" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842346038</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842346038</updated>
+    </task>
+    <task id="LOCAL-00065" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842437036</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842437036</updated>
+    </task>
+    <task id="LOCAL-00066" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842696039</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842696039</updated>
+    </task>
+    <task id="LOCAL-00067" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740855511028</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855511028</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740855528030</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855528030</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740855658037</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855658037</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740856045039</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1740856045040</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740856658032</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1740856658032</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740857815032</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1740857815032</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FixedEncoder" />
+    <MESSAGE value="RotatingEncoder" />
+    <MESSAGE value="Enigma" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enigma" />
+  </component>
+</project>

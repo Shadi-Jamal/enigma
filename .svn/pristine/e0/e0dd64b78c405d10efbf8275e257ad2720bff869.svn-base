@@ -1,0 +1,33 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.*;
+import java.util.Scanner;
+
+import static java.lang.System.in;
+
+public class EnigmaConsole {
+
+	public static void main(String[] args) {
+		EnigmaConsole console = new EnigmaConsole();
+		InputStream inputStream = in;
+		OutputStream outputStream = System.out;
+		console.run(inputStream, outputStream);
+	}
+
+	public void run(InputStream is, OutputStream os) {
+		PrintWriter writer = new PrintWriter(os, true);
+		Scanner sc = new Scanner(in);
+		String filePath = sc.nextLine().trim();
+		File file = new File(filePath);
+		System.out.println("Enigma wird gestartet.\n");
+		int schritt = 1;
+
+		
+
+
+	}
+
+}
+
+
+

@@ -1,0 +1,19 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.InputStream;
+import java.io.OutputStream;
+
+public class EnigmaConsole {
+
+	public static void main(String[] args) {
+		EnigmaConsole console = new EnigmaConsole();
+		InputStream inputStream = System.in;
+		OutputStream outputStream = System.out;
+		console.run(inputStream, outputStream);
+	}
+
+	public void run(InputStream is, OutputStream os) {
+		throw new UnsupportedOperationException();
+	}
+
+}

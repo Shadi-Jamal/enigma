@@ -1,0 +1,68 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.*;
+import java.util.Scanner;
+
+import static java.lang.System.in;
+
+public class EnigmaConsole {
+
+	public static void main(String[] args) {
+		EnigmaConsole console = new EnigmaConsole();
+		InputStream inputStream = in;
+		OutputStream outputStream = System.out;
+		console.run(inputStream, outputStream);
+	}
+
+	public void run(InputStream is, OutputStream os) {
+		PrintWriter writer = new PrintWriter(os, true);
+		Scanner sc=new Scanner(in);
+		String filePath = sc.nextLine().trim();
+		File file = new File(filePath);
+		System.out.println("Enigma wird gestartet.\n");
+		int schritt =1;
+		while (true){
+			if (schritt==1){
+				System.out.println("Enigma wird gestartet.");
+				schritt=2;
+			}
+			if (schritt==2){
+				System.out.println("Bitte geben Sie den Pfad zu einer Konfiguration an:");
+				schritt = 3;
+			}
+
+			else if (schritt==3) {
+
+				if (!file.exists()) {
+					System.out.println("Datei nicht gefunden!");
+					// Wir bleiben in Schritt 2
+				}
+				else {
+					boolean istGueltig = true;
+					if (!istGueltig) {
+						System.out.println("Fehlerhafte Enigma-Datei!");
+						// Wir bleiben in Schritt 2
+					}
+					else {
+						// Nur wenn alles ok ist, gehen wir zu Schritt 4
+						schritt = 4;
+					}
+				}
+			}
+			else if (schritt == 4) {
+				// Schritt 4: Nach Text zum Ver-/Entschlüsseln fragen
+				System.out.println("Geben Sie ihren Ver- oder Entschlüsselten Text ein:");
+				schritt = 5;
+			}
+			else if (schritt == 5) {
+				// Schritt 5: Einlesen und Verarbeiten des Textes
+
+			}
+
+
+		}
+
+	
+
+}
+}

@@ -1,0 +1,249 @@
+package de.uniwue.jpp.enigma;
+import java.io.*;
+import java.util.*;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import de.uniwue.jpp.encoder.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.util.*;
+
+
+
+
+public class Enigma {
+
+	FixedEncoder first;
+	InputStream is;
+	int encoderCount = 0;
+	Map<Character, Character> map=new HashMap<>();
+	Scanner sc;
+	List<String> lines = new ArrayList<>();
+	int reflectorAnzahl;
+	String previousInput ;
+	List<String> encoderTypes = new ArrayList<>();
+
+	public Enigma(FixedEncoder first) throws EnigmaCreationException {
+		if (first==null) throw new EnigmaCreationException("first muss nicht den Wert null sein");
+		this.first=first;
+	}
+	public Enigma(InputStream is) throws IOException, EnigmaCreationException, EncoderCreationException {
+			if (is == null) throw new EnigmaCreationException("InputStream darf nicht null sein");
+			Scanner scanner = new Scanner(is);
+			if (!scanner.hasNextLine()) {
+				throw new EnigmaCreationException("InputStream ist leer");
+			}
+			List<String> allLines = new ArrayList<>();
+			while (scanner.hasNextLine()) {
+				String line = scanner.nextLine().trim();
+				if (!line.isEmpty()) {
+					allLines.add(line);
+				}
+			}
+			List<List<String>> encoderGroups = new ArrayList<>();
+			List<String> currentGroup = null;
+			for (String line : allLines) {
+				if (line.startsWith("#")) {
+					if (currentGroup != null) {
+						encoderGroups.add(currentGroup);
+					}
+					currentGroup = new ArrayList<>();
+					currentGroup.add(line);
+				} else if (currentGroup != null) {
+					currentGroup.add(line);
+				}
+			}
+			if (currentGroup != null && !currentGroup.isEmpty()) {
+				encoderGroups.add(currentGroup);
+			}if (encoderGroups.size() < 2) {
+				throw new EnigmaCreationException();
+			}
+			if (!encoderGroups.get(0).get(0).trim().toLowerCase().contains("fixed")) {
+				throw new EnigmaCreationException();
+			}
+			String previousType = null;
+			for (List<String> group : encoderGroups) {
+				String currentType = group.get(0).substring(1).trim().split("\\s+")[0].toLowerCase();
+
+				if (previousType != null && previousType.equals(currentType)) {
+					throw new EnigmaCreationException();
+				}
+
+				previousType = currentType;
+			}
+
+			int reflectorCount = 0;
+			for (List<String> group : encoderGroups) {
+				if (group.get(0).trim().toLowerCase().contains("reflecting")) {
+					reflectorCount++;
+				}
+			}
+			if (reflectorCount != 1) {
+				throw new EnigmaCreationException();
+			}
+			Encoder reflector = createReflector(findReflectorGroup(encoderGroups));
+			Encoder previousEncoder = reflector;
+			List<List<String>> nonReflectorGroups = new ArrayList<>();
+			for (List<String> group : encoderGroups) {
+				if (!group.get(0).trim().toLowerCase().contains("reflecting")) {
+					nonReflectorGroups.add(group);
+				}
+			}
+			for (int i = nonReflectorGroups.size() - 1; i >= 0; i--) {
+				List<String> group = nonReflectorGroups.get(i);
+				String type = group.get(0).substring(1).trim().split("\\s+")[0].toLowerCase();
+				if (type.equals("rotating")) {
+					previousEncoder = createRotatingEncoder(group, previousEncoder);
+				} else if (type.equals("fixed")) {previousEncoder = createFixedEncoder(group, previousEncoder);
+				}
+			}
+			if (!(previousEncoder instanceof FixedEncoder)) {
+				throw new EnigmaCreationException();
+			}
+			this.first = (FixedEncoder) previousEncoder;
+		}
+		private List<String> findReflectorGroup (List <List<String>> groups) {
+			for (List<String> group : groups) {
+				if (group.get(0).trim().toLowerCase().contains("reflecting")) {
+					return group;
+				}
+			}
+			return null;
+		}
+		private FixedEncoder createFixedEncoder (List <String> group, Encoder delegate) throws EnigmaCreationException {
+			Map<Character, Character> map = parseMapping(group);
+            try {
+                return new FixedEncoder(delegate, (HashMap<Character, Character>) map);
+            } catch (EncoderCreationException e) {
+                throw new RuntimeException(e);
+            }
+        }
+		private RotatingEncoder createRotatingEncoder (List <String> group, Encoder delegate) throws EnigmaCreationException, EncoderCreationException {
+			String header = group.get(0).trim();
+			int rotationValue = 0;
+			String[] parts = header.substring(1).trim().split("\\s+");
+			if (parts.length > 1) {
+				try {
+					rotationValue = Integer.parseInt(parts[1]);
+					if (rotationValue < 0 || rotationValue > 25) {
+						throw new EnigmaCreationException();
+					}
+				} catch (NumberFormatException e) {
+					throw new EnigmaCreationException();
+				}
+			}
+			Map<Character, Character> map = parseMapping(group);
+			return new RotatingEncoder(delegate, new HashMap<>(map), rotationValue);
+		}
+		private Reflector createReflector (List < String > group) throws EnigmaCreationException, EncoderCreationException {
+			Map<Character, Character> map = parseMapping(group);
+			return new Reflector(new HashMap<>(map));
+		}
+		private Map<Character, Character> parseMapping (List < String > group) throws EnigmaCreationException {
+			Map<Character, Character> map = new HashMap<>();
+			for (int i = 1; i < group.size(); i++) {
+				String line = group.get(i).trim();
+				if (line.isEmpty()) continue;
+				String[] parts = line.split("->");
+				if (parts.length != 2 || parts[0].length() != 1 || parts[1].length() != 1) {
+					throw new EnigmaCreationException();
+				}
+				char from = parts[0].charAt(0);
+				char to = parts[1].charAt(0);
+				if (from < 'a' || from > 'z' || to < 'a' || to > 'z') {
+					throw new EnigmaCreationException();
+				}
+				if (map.containsKey(from)) {
+					throw new EnigmaCreationException();
+				}
+
+				map.put(from, to);
+			}if (map.size() != 26) throw new EnigmaCreationException("Das Mapping muss alle 26 Buchstaben enthalten");
+			return map;
+		}
+	public String encrypt(InputStream is) throws IOException, EnigmaEncryptionException {
+		if (is==null) throw new EnigmaEncryptionException();
+		sc=new Scanner(is);
+		if (!sc.hasNextLine()) {
+			sc.close();
+			throw new EnigmaEncryptionException("InputStream ist leer");
+		}
+		StringBuilder sb=new StringBuilder();
+		while (sc.hasNextLine()){
+			String line = sc.nextLine();
+			if (line.chars().anyMatch(Character::isUpperCase)){
+				sc.close();
+				throw new EnigmaEncryptionException();
+			}
+			for (char c : line.toCharArray()) {
+				if ((c < 'a' || c > 'z') && (c != ' ') && (c != '\n')) {
+					sc.close();
+					throw new EnigmaEncryptionException("dieses Zeichen ist niocht erlaubt!!!!!!!xxxxx ");
+				}
+			}
+			sb.append(line);
+			if (sc.hasNextLine()) {
+				sb.append("\n");
+			}
+		}
+		sc.close();
+		String stringVOnSC = sb.toString();
+		StringBuilder encText=new StringBuilder();
+		for (int i = 0; i < stringVOnSC.length(); i++) {
+			char c = stringVOnSC.charAt(i);
+
+			if (c>='a' && c<='z'){
+				char encode = ' ';
+				try {
+					encode = first.encode(c);
+					encText.append(encode);
+					first.rotate(true);
+				} catch (EncoderInputException e) {
+					throw new EnigmaEncryptionException("vhjdslbvljksdv");
+				}
+			}else if (c == ' ' || c == '\n') {
+				encText.append(c);
+			}
+			else {
+				//testEnigmaEncryptIllegal
+				//java.lang.AssertionError: Encrypting a word containing illegal characters should raise an EnigmaEncryptionException!
+				//	at org.junit.Assert.fail(Assert.java:88)
+				//	at de.uniwue.jpp.enigma.test.Test04Enigma.testEnigmaEncryptIllegal(Test04Enigma.java:342)
+				throw new EnigmaEncryptionException("Unerlaubtes Zeichen:");
+			}
+		}
+		return encText.toString();
+	}
+	public String toString() {
+		StringBuilder sb=new StringBuilder();
+		Encoder currentEncoder = first;
+		sb.append("# fixed");
+		sb.append("\n");
+		sb.append(currentEncoder.toString());
+		sb.append("\n");
+		currentEncoder = ((AbstractChainableEncoder) currentEncoder).getDelegate();
+
+		while (currentEncoder != null && !(currentEncoder instanceof Reflector)) {
+			if (currentEncoder instanceof RotatingEncoder) {
+				sb.append("# rotating\n");
+				sb.append(currentEncoder.toString());
+				sb.append("\n");
+			}
+			currentEncoder = ((AbstractChainableEncoder) currentEncoder).getDelegate();
+		}
+		if (currentEncoder != null) {
+			sb.append("# reflecting");
+			sb.append("\n");
+			sb.append(currentEncoder.toString());
+			//sb.append("\n");
+		}
+
+		return sb.toString();
+	}
+
+}
+

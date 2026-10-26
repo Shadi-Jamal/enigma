@@ -1,0 +1,77 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.util.*;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import de.uniwue.jpp.encoder.Encoder;
+import de.uniwue.jpp.encoder.EncoderCreationException;
+import de.uniwue.jpp.encoder.EncoderInputException;
+import de.uniwue.jpp.encoder.FixedEncoder;
+import de.uniwue.jpp.encoder.Reflector;
+import de.uniwue.jpp.encoder.RotatingEncoder;
+
+public class Enigma {
+
+	FixedEncoder first;
+	InputStream is;
+	Map<Character, Character> map=new HashMap<>();
+	Scanner sc=new Scanner(is);
+	public Enigma(FixedEncoder first) throws EnigmaCreationException {
+		if (first==null) throw new EnigmaCreationException("first muss nicht den Wert null sein");
+		this.first=first;
+	}
+
+	public Enigma(InputStream is) throws IOException, EnigmaCreationException {
+		if (is==null) throw new EnigmaCreationException();
+		if (is.available()==0) throw new EnigmaCreationException("is ist leer");
+
+		//while (sc.hasNextLine()){
+		//}
+		this.is=is;
+	}
+
+	public String encrypt(InputStream is) throws IOException, EnigmaEncryptionException {
+		if (is==null) throw new EnigmaEncryptionException();
+		if (is.available()==0) throw new EnigmaEncryptionException();
+		return "a";
+	}
+
+	public String toString() {
+		throw new UnsupportedOperationException();
+	}
+	public static boolean checkAllAlphabetsManually(Map<Character, Character> map) {
+		return map.containsKey('A') &&
+				map.containsKey('B') &&
+				map.containsKey('C') &&
+				map.containsKey('D') &&
+				map.containsKey('E') &&
+				map.containsKey('F') &&
+				map.containsKey('G') &&
+				map.containsKey('H') &&
+				map.containsKey('I') &&
+				map.containsKey('J') &&
+				map.containsKey('K') &&
+				map.containsKey('L') &&
+				map.containsKey('M') &&
+				map.containsKey('N') &&
+				map.containsKey('O') &&
+				map.containsKey('P') &&
+				map.containsKey('Q') &&
+				map.containsKey('R') &&
+				map.containsKey('S') &&
+				map.containsKey('T') &&
+				map.containsKey('U') &&
+				map.containsKey('V') &&
+				map.containsKey('W') &&
+				map.containsKey('X') &&
+				map.containsKey('Y') &&
+				map.containsKey('Z');
+	}
+}

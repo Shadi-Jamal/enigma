@@ -1,0 +1,125 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.util.*;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import de.uniwue.jpp.encoder.Encoder;
+import de.uniwue.jpp.encoder.EncoderCreationException;
+import de.uniwue.jpp.encoder.EncoderInputException;
+import de.uniwue.jpp.encoder.FixedEncoder;
+import de.uniwue.jpp.encoder.Reflector;
+import de.uniwue.jpp.encoder.RotatingEncoder;
+
+public class Enigma {
+
+	FixedEncoder first;
+	InputStream is;
+	int encoderCount = 0;
+	Map<Character, Character> map=new HashMap<>();
+	Scanner sc;
+
+	int reflectorAnzahl=0;
+	String previousInput = null;
+	List<String> encoderTypes = new ArrayList<>();
+
+	public Enigma(FixedEncoder first) throws EnigmaCreationException {
+		if (first==null) throw new EnigmaCreationException("first muss nicht den Wert null sein");
+		this.first=first;
+	}
+	public Enigma(InputStream is) throws IOException, EnigmaCreationException {
+		if (is==null) throw new EnigmaCreationException();
+		sc=new Scanner(is);
+		if (!sc.hasNextLine()) throw new EnigmaCreationException("is ist leer !!!");
+
+		if (encoderTypes.size()==1) throw new EnigmaCreationException("enthält nur einen Encoder!!!");
+		while (sc.hasNextLine()){
+			if (sc.nextLine().startsWith("# reflecting")){
+				reflectorAnzahl++;
+			}
+		}
+		while (sc.hasNextLine()){
+			String currentInput=sc.nextLine();
+			if (previousInput!=null &&previousInput.equals(currentInput)){
+				throw new EnigmaCreationException("is enthält Encoder gleichen Typs direkt hintereinander");
+			}
+			previousInput=currentInput;
+		}
+		if (reflectorAnzahl>1) throw new EnigmaCreationException("mehr als 2 Reflectoren");
+		if (encoderTypes.isEmpty()) {
+			throw new EnigmaCreationException("Keine Encoder gefunden");
+		} else if (!encoderTypes.get(0).equals("FIXED")) {
+			throw new EnigmaCreationException("Der erste Encoder ist nicht vom Typ FixedEncoder");
+		}
+		if (Collections.frequency(encoderTypes, "REFLECTING") > 1) {
+			throw new EnigmaCreationException("InputStream is enthält zwei Reflectoren");
+		}
+
+		for (int i = 0; i < encoderTypes.size() - 1; i++) {
+			if (encoderTypes.get(i).equals(encoderTypes.get(i + 1))) {
+				throw new EnigmaCreationException("InputStream enthält Encoder gleichen Typs direkt hintereinander");
+			}
+		}
+		this.is=is;
+	}
+
+	public String encrypt(InputStream is) throws IOException, EnigmaEncryptionException {
+		if (is==null) throw new EnigmaEncryptionException();
+
+		sc=new Scanner(is);
+		if (!sc.hasNextLine()) {
+			throw new EnigmaEncryptionException("InputStream ist leer");
+		}
+
+		StringBuilder sb=new StringBuilder();
+
+		while (sc.hasNextLine()){
+			String line = sc.nextLine();
+			if (line.chars().anyMatch(Character::isUpperCase)) throw new EnigmaEncryptionException();
+			sb.append(line);
+			if (sc.hasNextLine()) {
+				sb.append("\n");
+			}
+		}
+		String stringVOnSC = sb.toString();
+		StringBuilder encText=new StringBuilder();
+
+		for (int i = 0; i < stringVOnSC.length(); i++) {
+			char c = stringVOnSC.charAt(i);
+
+			if (c>='a' && c<='z'){
+                char encode = ' ';
+                try {
+                    encode = first.encode(c);
+					encText.append(encode);
+					first.rotate(true);
+                } catch (EncoderInputException e) {
+                    throw new EnigmaEncryptionException("");
+                }
+                encText.append(encode);
+			}else if (c == ' ' || c == '\n') {
+				encText.append(c);
+			}
+			else {
+				//testEnigmaEncryptIllegal
+				//java.lang.AssertionError: Encrypting a word containing illegal characters should raise an EnigmaEncryptionException!
+				//	at org.junit.Assert.fail(Assert.java:88)
+				//	at de.uniwue.jpp.enigma.test.Test04Enigma.testEnigmaEncryptIllegal(Test04Enigma.java:342)
+				throw new EnigmaEncryptionException("Unerlaubtes Zeichen:");
+			}
+		}
+		return encText.toString();
+	}
+
+	public String toString() {
+		throw new UnsupportedOperationException();
+	}
+
+
+}

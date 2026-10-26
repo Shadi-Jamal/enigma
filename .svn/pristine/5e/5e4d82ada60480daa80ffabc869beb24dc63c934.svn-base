@@ -1,0 +1,40 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
+import java.io.Reader;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import de.uniwue.jpp.encoder.Encoder;
+import de.uniwue.jpp.encoder.EncoderCreationException;
+import de.uniwue.jpp.encoder.EncoderInputException;
+import de.uniwue.jpp.encoder.FixedEncoder;
+import de.uniwue.jpp.encoder.Reflector;
+import de.uniwue.jpp.encoder.RotatingEncoder;
+
+public class Enigma {
+
+	public Enigma(FixedEncoder first) throws EnigmaCreationException {
+		throw new UnsupportedOperationException();
+	}
+
+	public Enigma(InputStream is) throws IOException, EnigmaCreationException {
+		throw new UnsupportedOperationException();
+	}
+
+	public String encrypt(InputStream is) throws IOException, EnigmaEncryptionException {
+		throw new UnsupportedOperationException();
+	}
+
+	public String toString() {
+		throw new UnsupportedOperationException();
+	}
+}

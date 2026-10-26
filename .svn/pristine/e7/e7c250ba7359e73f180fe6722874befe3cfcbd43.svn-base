@@ -1,0 +1,241 @@
+package de.uniwue.jpp.enigma;
+
+import java.io.*;
+import java.util.*;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import de.uniwue.jpp.encoder.*;
+
+public class Enigma {
+
+	FixedEncoder first;
+	InputStream is;
+	int encoderCount = 0;
+	Map<Character, Character> map=new HashMap<>();
+	Scanner sc;
+	int reflectorAnzahl;
+	String previousInput ;
+	List<String> encoderTypes = new ArrayList<>();
+
+	public Enigma(FixedEncoder first) throws EnigmaCreationException {
+		if (first==null) throw new EnigmaCreationException();
+		this.first=first;
+	}
+	public Enigma(InputStream is) throws IOException, EnigmaCreationException, EncoderCreationException {
+			if (is == null) throw new EnigmaCreationException();
+			encoderTypes = new ArrayList<>();
+			map = new HashMap<>();
+
+			BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+			String line;
+			String currentSection = null;
+			Map<Character, Character> currentMap = new HashMap<>();
+			FixedEncoder firstEncoder = null;
+			Encoder currentEncoder = null;
+			int rotationValue = 0;
+			while ((line = reader.readLine()) != null) {
+				line = line.trim();
+				if (line.isEmpty()) continue;
+				if (line.startsWith("#")) {
+					if (currentSection != null && !currentMap.isEmpty()) {
+						if (currentMap.size() != 26) {
+							throw new EnigmaCreationException();
+						}
+						if ("fixed".equals(currentSection)) {
+							FixedEncoder encoder = new FixedEncoder(currentEncoder, new HashMap<>(currentMap));
+							if (firstEncoder == null) {
+								firstEncoder = encoder;
+							}
+							currentEncoder = encoder;
+						} else if ("rotating".equals(currentSection)) {
+							currentEncoder = new RotatingEncoder(currentEncoder, new HashMap<>(currentMap), rotationValue);
+							rotationValue = 0;
+						} else if ("reflecting".equals(currentSection)) {
+							currentEncoder = new Reflector(new HashMap<>(currentMap));
+						}
+						currentMap.clear();
+					}
+					if (line.startsWith("# fixed")) {
+						currentSection = "fixed";
+						encoderTypes.add("FIXED");
+					} else if (line.startsWith("# rotating")) {
+						currentSection = "rotating";
+						encoderTypes.add("ROTATING");
+						String[] parts = line.split("\\s+");
+						if (parts.length > 2) {
+							try {
+								rotationValue = Integer.parseInt(parts[2]);
+								if (rotationValue < 0 || rotationValue > 25) {
+									throw new EnigmaCreationException();
+								}
+							} catch (NumberFormatException e) {
+								throw new EnigmaCreationException();
+							}
+						}
+					} else if (line.startsWith("# reflecting")) {
+						currentSection = "reflecting";
+						encoderTypes.add("REFLECTING");
+					} else {
+						throw new EnigmaCreationException();
+					}
+				}
+				// Process mapping lines
+				else {
+					if (currentSection == null) {
+						throw new EnigmaCreationException();
+					}
+
+					// Validate mapping format (a->b)
+					if (!line.matches("^[a-z]->[a-z]$")) {
+						throw new EnigmaCreationException();
+					}
+
+					char key = line.charAt(0);
+					char value = line.charAt(3);
+
+					// Check for duplicate keys
+					if (currentMap.containsKey(key)) {
+						throw new EnigmaCreationException();
+					}
+
+					// Check for duplicate values (except for reflector)
+					if (!currentSection.equals("reflecting") && currentMap.containsValue(value)) {
+						throw new EnigmaCreationException();
+					}
+
+					currentMap.put(key, value);
+				}
+			}
+
+			if (currentSection != null && !currentMap.isEmpty()) {
+				if (currentMap.size() != 26) {
+					throw new EnigmaCreationException();
+				}
+				if ("fixed".equals(currentSection)) {
+					FixedEncoder encoder = new FixedEncoder(currentEncoder, new HashMap<>(currentMap));
+					if (firstEncoder == null) {
+						firstEncoder = encoder;
+					}
+					currentEncoder = encoder;
+				} else if ("rotating".equals(currentSection)) {
+					currentEncoder = new RotatingEncoder(currentEncoder, new HashMap<>(currentMap), rotationValue);
+				} else if ("reflecting".equals(currentSection)) {
+					currentEncoder = new Reflector(new HashMap<>(currentMap));
+				}
+			}
+
+
+			if (encoderTypes.isEmpty()) {
+				throw new EnigmaCreationException();
+			}
+			if (encoderTypes.size() == 1) {
+				throw new EnigmaCreationException();
+			}
+			if (!encoderTypes.get(0).equals("FIXED")) {
+				throw new EnigmaCreationException();
+			}
+
+			// Check for consecutive encoders of the same type
+			for (int i = 0; i < encoderTypes.size() - 1; i++) {
+				if (encoderTypes.get(i).equals(encoderTypes.get(i + 1))) {
+					throw new EnigmaCreationException();
+				}
+			}
+
+			// Check for multiple reflectors
+			if (Collections.frequency(encoderTypes, "REFLECTING") > 1) {
+				throw new EnigmaCreationException();
+			}
+
+			// Validate that we have a first encoder
+			if (firstEncoder == null) {
+				throw new EnigmaCreationException();
+			}
+
+			this.first = firstEncoder;
+			this.is = is;
+
+	}
+
+
+
+	public String encrypt(InputStream is) throws IOException, EnigmaEncryptionException {
+		if (is==null) throw new EnigmaEncryptionException();
+
+		sc=new Scanner(is);
+		if (!sc.hasNextLine()) {
+			throw new EnigmaEncryptionException("InputStream ist leer");
+		}
+
+		StringBuilder sb=new StringBuilder();
+		while (sc.hasNextLine()){
+			String line = sc.nextLine();
+			if (line.chars().anyMatch(Character::isUpperCase)) throw new EnigmaEncryptionException();
+			for (char c : line.toCharArray()) {
+				if ((c < 'a' || c > 'z') && (c != ' ') ) {
+					throw new EnigmaEncryptionException("dieses Zeichen ist niocht erlaubt!!!!!!!xxxxx ");
+				}
+			}
+			sb.append(line);
+			if (sc.hasNextLine()) {
+				sb.append("\n");
+			}
+		}
+		String stringVOnSC = sb.toString();
+		StringBuilder encText=new StringBuilder();
+
+		for (int i = 0; i < stringVOnSC.length(); i++) {
+			char c = stringVOnSC.charAt(i);
+
+			if (c>='a' && c<='z'){
+                char encode = ' ';
+                try {
+                    encode = first.encode(c);
+					encText.append(encode);
+					first.rotate(true);
+                } catch (EncoderInputException e) {
+                    throw new EnigmaEncryptionException("vhjdslbvljksdv");
+                }
+			}else if (c == ' ' || c == '\n') {
+				encText.append(c);
+			}
+			else {
+				//testEnigmaEncryptIllegal
+				//java.lang.AssertionError: Encrypting a word containing illegal characters should raise an EnigmaEncryptionException!
+				//	at org.junit.Assert.fail(Assert.java:88)
+				//	at de.uniwue.jpp.enigma.test.Test04Enigma.testEnigmaEncryptIllegal(Test04Enigma.java:342)
+				throw new EnigmaEncryptionException("Unerlaubtes Zeichen:");
+			}
+		}
+		return encText.toString();
+	}
+
+	public String toString() {
+		StringBuilder sb=new StringBuilder();
+		Encoder currentEncoder = first;
+		sb.append("# fixed");
+		sb.append("\n");
+		sb.append(currentEncoder.toString());
+		sb.append("\n");
+		currentEncoder = ((AbstractChainableEncoder) currentEncoder).getDelegate();
+
+		while (currentEncoder != null && !(currentEncoder instanceof Reflector)) {
+			if (currentEncoder instanceof RotatingEncoder) {
+				sb.append("# rotating\n");
+				sb.append(currentEncoder.toString());
+				sb.append("\n");
+			}
+			currentEncoder = ((AbstractChainableEncoder) currentEncoder).getDelegate();
+		}
+		if (currentEncoder != null) {
+			sb.append("# reflecting");
+			sb.append("\n");
+			sb.append(currentEncoder.toString());
+			//sb.append("\n");
+		}
+
+		return sb.toString();
+	}
+}

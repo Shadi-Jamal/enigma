@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4944d738-df33-4b0d-8775-e3fb83ef21e2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/uniwue/jpp/encoder/FixedEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/uniwue/jpp/encoder/FixedEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/uniwue/jpp/encoder/RotatingEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/uniwue/jpp/encoder/RotatingEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/de/uniwue/jpp/enigma/Enigma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/de/uniwue/jpp/enigma/Enigma.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2tUVQ4hle9iy9Y9s8IMmAYJFEtZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.EnigmaConsole.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/shadi/Desktop/ppppppp/enigma&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="EnigmaConsole" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-18" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="de.uniwue.jpp.enigma.EnigmaConsole" />
+      <module name="enigma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.uniwue.jpp.enigma.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="sun.tools.jar.Main" />
+      <module name="enigma" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EnigmaConsole" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4944d738-df33-4b0d-8775-e3fb83ef21e2" name="Changes" comment="" />
+      <created>1740406620163</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740406620163</updated>
+    </task>
+    <task id="LOCAL-00058" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740701911033</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1740701911034</updated>
+    </task>
+    <task id="LOCAL-00059" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740701975039</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1740701975039</updated>
+    </task>
+    <task id="LOCAL-00060" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740702089039</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1740702089039</updated>
+    </task>
+    <task id="LOCAL-00061" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740742019029</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1740742019029</updated>
+    </task>
+    <task id="LOCAL-00062" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740783246041</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1740783246041</updated>
+    </task>
+    <task id="LOCAL-00063" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740841582038</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1740841582038</updated>
+    </task>
+    <task id="LOCAL-00064" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842346038</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842346038</updated>
+    </task>
+    <task id="LOCAL-00065" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842437036</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842437036</updated>
+    </task>
+    <task id="LOCAL-00066" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740842696039</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1740842696039</updated>
+    </task>
+    <task id="LOCAL-00067" summary="RotatingEncoder">
+      <option name="closed" value="true" />
+      <created>1740855511028</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855511028</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740855528030</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855528030</updated>
+    </task>
+    <task id="LOCAL-00069" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740855658037</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1740855658037</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740856045039</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1740856045040</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740856658032</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1740856658032</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740857815032</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1740857815032</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740862985031</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1740862985031</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740863724033</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1740863724033</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740864473035</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1740864473035</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740923014040</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1740923014040</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740923095040</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1740923095040</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1740923133036</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1740923133036</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741030557026</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1741030557026</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741030918091</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1741030918091</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741129402037</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1741129402037</updated>
+    </task>
+    <task id="LOCAL-00082" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741129600059</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1741129600059</updated>
+    </task>
+    <task id="LOCAL-00083" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741129673050</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1741129673050</updated>
+    </task>
+    <task id="LOCAL-00084" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741129962031</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1741129962031</updated>
+    </task>
+    <task id="LOCAL-00085" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741130029042</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1741130029042</updated>
+    </task>
+    <task id="LOCAL-00086" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741130299032</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1741130299032</updated>
+    </task>
+    <task id="LOCAL-00087" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741130390051</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1741130390051</updated>
+    </task>
+    <task id="LOCAL-00088" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741132382041</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1741132382041</updated>
+    </task>
+    <task id="LOCAL-00089" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741132793037</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1741132793037</updated>
+    </task>
+    <task id="LOCAL-00090" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741183003038</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1741183003038</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741185890040</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1741185890040</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741185942040</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1741185942040</updated>
+    </task>
+    <task id="LOCAL-00093" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741185977028</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1741185977029</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741186029033</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1741186029033</updated>
+    </task>
+    <task id="LOCAL-00095" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741186328044</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1741186328044</updated>
+    </task>
+    <task id="LOCAL-00096" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741187323034</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1741187323035</updated>
+    </task>
+    <task id="LOCAL-00097" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741187976037</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1741187976037</updated>
+    </task>
+    <task id="LOCAL-00098" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741189976037</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1741189976037</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741201419033</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1741201419034</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741730611028</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1741730611028</updated>
+    </task>
+    <task id="LOCAL-00101" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741730734036</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1741730734036</updated>
+    </task>
+    <task id="LOCAL-00102" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1741786987032</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1741786987032</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1742321949048</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1742321949048</updated>
+    </task>
+    <task id="LOCAL-00104" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1742329444034</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1742329444034</updated>
+    </task>
+    <task id="LOCAL-00105" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1742518556048</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1742518556048</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Enigma">
+      <option name="closed" value="true" />
+      <created>1742518600033</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1742518600033</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="FixedEncoder" />
+    <MESSAGE value="RotatingEncoder" />
+    <MESSAGE value="Enigma" />
+    <option name="LAST_COMMIT_MESSAGE" value="Enigma" />
+  </component>
+</project>
